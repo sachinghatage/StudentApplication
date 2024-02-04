@@ -1,0 +1,44 @@
+﻿@page
+@model StudentApplication.Pages.Student.CreateModel
+@using StudentApplication.Model;
+@{
+}
+<form method="post">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">First Name</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="FirstName" value="@Model.students.FirstName" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Last Name</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="LastName" value="@Model.students.LastName" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email Id</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" name="Email" value="@Model.students.Email" />
+        </div>
+    </div>
+    <div>
+        <label for="Gender">Gender:</label>
+    </div>
+    <div>
+        <input type="radio" id="male" name="Gender" value="Male" @(Model.students.SelectGender == Gender.Male ? "checked" : "")>
+        <label for="male">Male</label>
+    </div>
+    <div>
+        <input type="radio" id="female" name="Gender"  value="Female" @(Model.students.SelectGender == Gender.Female ? "checked" : "")>
+        <label for="female">Female</label>
+    </div>
+    
+    <div class="row mb-3">
+        <div class="offset-sm-3" col-sm-6 g-grid>
+            <button type="submit" class="btn btn-primary">Submit</button> &nbsp
+            <button type="submit" class="btn btn-danger">Cancel</button>
+
+        </div>
+    </div>
+</form>

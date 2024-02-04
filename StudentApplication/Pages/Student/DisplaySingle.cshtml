@@ -1,0 +1,89 @@
+﻿@page
+@model StudentApplication.Pages.Student.DisplaySingleModel
+@using StudentApplication.Model;
+@{
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h1>Student Details</h1>
+
+    <div>
+        <form method="get">
+            <label for="studentId">Enter Student ID: </label>
+            <input type="text" id="studentId" name="Id" />
+            <div class="mt-2">
+            <button type="submit">Fetch Student</button><br />
+            </div>
+        </form>
+    </div>
+
+
+    <div class="mt-5">
+        @{
+            
+            
+                <form>
+                    <h2>Details for Student ID: @Model.student.Id</h2>
+                    <div class="container mt-3">
+                        <form>
+                            <div class="row-mb-3">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label for="firstName">First Name:</label>
+                                        <input type="text" class="form-control" id="firstName" value="@Model.student.FirstName" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-mb-3">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label for="lastName">Last Name:</label>
+                                        <input type="text" class="form-control" id="lastName" value="@Model.student.LastName" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-mb-3">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label for="email">Email:</label>
+                                        <input type="email" class="form-control" id="email" value="@Model.student.Email" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="row-mb-3">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="gender">Gender:</label>
+                                    @if (Model.student != null && Model.student.SelectGender != Gender.Unknown)
+                                    {
+                                        <input type="text" class="form-control" id="gender" value="@Model.student.SelectGender.ToString()" readonly />
+                                    }
+                                    else
+                                    {
+                                        <input type="text" class="form-control" id="gender" value="" readonly />
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        </form>
+                    </div>
+
+                </form>
+                            
+ 
+            
+        }
+
+    </div>
+
+        
+       
+    
+</body>
+</html>
+

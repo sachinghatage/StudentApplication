@@ -1,0 +1,42 @@
+﻿@page
+@model StudentApplication.Pages.Student.IndexModel
+@{
+}
+<!--<a href="/Student/Create" class="btn btn-primary">Create</a>-->
+<br />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email Id</td>
+            <td>Gender</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+       
+        @{
+            foreach (var item in Model.listStudents)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Email</td>
+                    <td>@item.SelectGender</td>
+                    <td>
+                        <a href="/Student/Edit?id=@item.Id" class="btn btn-primary rounded-circle btn-lg">Edit</a>
+                    </td>
+                    <td>
+                        <a href="/Student/Delete?id=@item.Id" class="btn btn-danger rounded-circle btn-lg">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
+

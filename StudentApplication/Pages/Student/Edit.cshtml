@@ -1,0 +1,44 @@
+﻿@page
+@model StudentApplication.Pages.Student.EditModel
+@{
+}
+
+<form method="post">
+    <input type="hidden" name="hiddenId" value="@Model.student.Id" />
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">First Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="FirstName" value="@Model.student.FirstName" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Last Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="LastName" value="@Model.student.LastName" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email Id</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Email" value="@Model.student.Email" />
+        </div>
+    </div>
+    <div>
+        <label for="Gender">Gender:</label>
+    </div>
+    <div>
+        <input type="radio" id="male" name="Gender" value="@Model.student.SelectGender">
+        <label for="male">Male</label>
+    </div>
+    <div>
+        <input type="radio" id="female" name="Gender" value="@Model.student.SelectGender">
+        <label for="female">Female</label>
+    </div>
+    <div class="row mb-3">
+        <div class="offset-sm-3" col-sm-3 g-grid>
+            <button type="submit" class="btn btn-primary">Submit</button> &nbsp
+            <button type="submit" class="btn btn-danger">Cancel</button>
+
+        </div>
+    </div>
+</form>
